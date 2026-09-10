@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root[data-theme="dark"] {
+  --bg: #150F19;
+  --panel: #1E1723;
+  --panel-raised: #251C2C;
+  --border: #382C40;
+  --text: #EDE7EE;
+  --text-dim: #9C8FA6;
+}
+
+:root[data-theme="light"] {
+  --bg: #F4F5F2;
+  --panel: #FFFFFF;
+  --panel-raised: #FFFFFF;
+  --border: #DCDFDA;
+  --text: #241A2C;
+  --text-dim: #6B6473;
+}
+
+:root {
+  --wine: #4A1F2E;
+  --verdigris: #4E9B87;
+  --verdigris-bright: #63BBA5;
+  --marigold: #D48A3D;
+  --sindoor: #B2453A;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Consolas', monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+input, button, textarea, select { font-family: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--verdigris);
+  outline-offset: 2px;
+}
