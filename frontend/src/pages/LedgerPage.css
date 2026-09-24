@@ -1,0 +1,59 @@
+.ledger-tamper-banner {
+  padding: 14px 18px;
+  background: color-mix(in srgb, var(--sindoor) 12%, transparent);
+  border: 1px solid var(--sindoor);
+  border-radius: 8px;
+  color: var(--sindoor);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.ledger-table-wrap {
+  padding: 0;
+  overflow-x: auto;
+}
+
+.ledger-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.ledger-table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+}
+
+.ledger-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.ledger-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ledger-cell-mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.ledger-cell-details {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ledger-cell-hash {
+  color: var(--verdigris);
+}

@@ -1,0 +1,33 @@
+.ledger-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.ledger-badge-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin: 0 0 3px 0;
+}
+
+.ledger-badge-status {
+  font-size: 13px;
+  margin: 0;
+  color: var(--verdigris);
+}
+
+.ledger-badge-broken {
+  border-color: var(--sindoor);
+  background: color-mix(in srgb, var(--sindoor) 8%, var(--panel));
+}
+
+.ledger-badge-error {
+  color: var(--sindoor);
+}

@@ -1,0 +1,67 @@
+.pending-subheading {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin: 16px 0 8px 0;
+}
+
+.pending-subheading:first-of-type {
+  margin-top: 4px;
+}
+
+.pending-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pending-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.pending-item-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.pending-item-detail {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.pending-approve-btn {
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid var(--verdigris);
+  border-radius: 6px;
+  color: var(--verdigris);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pending-approve-btn:hover:not(:disabled) {
+  background: var(--verdigris);
+  color: var(--bg);
+}
+
+.pending-approve-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

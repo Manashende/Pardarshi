@@ -1,0 +1,165 @@
+.item-bank-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 780px;
+}
+
+.form-select {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.form-select:focus {
+  border-color: var(--verdigris);
+  outline: none;
+}
+
+.option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.option-row input[type='radio'],
+.option-row input[type='checkbox'] {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.option-text-input {
+  flex: 1;
+  padding: 8px 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.option-text-input:focus {
+  border-color: var(--verdigris);
+  outline: none;
+}
+
+.option-remove-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 8px;
+}
+
+.option-remove-btn:hover {
+  color: var(--sindoor);
+}
+
+.option-add-btn {
+  background: transparent;
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  color: var(--verdigris);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 6px 12px;
+}
+
+.form-error-list {
+  color: var(--sindoor);
+  font-size: 13px;
+  margin: 0 0 14px 0;
+  padding-left: 18px;
+}
+
+.composer-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.draft-list-panel,
+.submitted-list-panel {
+  max-width: 780px;
+}
+
+.empty-state {
+  color: var(--text-dim);
+  font-size: 13px;
+  padding: 12px 0;
+}
+
+.item-bank-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  font-size: 13px;
+}
+
+.item-bank-table th {
+  text-align: left;
+  color: var(--text-dim);
+  font-weight: 500;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.item-bank-table td {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.truncate-cell {
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.capitalize-cell {
+  text-transform: capitalize;
+}
+
+.row-actions {
+  display: flex;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.row-actions button {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 12px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.row-actions button:hover {
+  border-color: var(--verdigris);
+  color: var(--verdigris);
+}
+
+.draft-error-row td {
+  color: var(--sindoor);
+  font-size: 12px;
+}
+
+.submit-all-btn {
+  margin-top: 4px;
+}

@@ -71,6 +71,28 @@ class CompileRequest(BaseModel):
     assignment_secret: str  # hex string returned by /exam-events on creation
     exam_date: str  # e.g. "2027-01-15"
 
+@router.get("")
+def list_exam_events(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(require_role([UserRole.ADMIN])),
+):
+    events = db.query(ExamEvent).all()
+    
+    # Returning a list of dictionaries to ensure FastAPI serializes the SQLAlchemy models cleanly
+    return [
+        {
+            "id": str(e.id),
+            "exam_name": e.exam_name,
+            "exam_start_epoch": e.exam_start_epoch,
+            "override_window_end_epoch": e.override_window_end_epoch,
+            "num_variants": e.num_variants,
+            "threshold": e.threshold,
+            "total_custodians": e.total_custodians,
+            "override_threshold": e.override_threshold,
+            "status": e.status.value,
+        }
+        for e in events
+    ]
 
 @router.post("/{exam_event_id}/compile")
 def compile_exam_event(

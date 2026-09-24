@@ -1,0 +1,94 @@
+.confirm-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.confirm-modal {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 440px;
+  width: 90%;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.confirm-modal-title {
+  margin: 0 0 12px 0;
+  font-family: var(--font-display, inherit);
+  color: var(--text);
+}
+
+.confirm-modal-message {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.confirm-modal-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.confirm-modal-checkbox-row input[type='checkbox'] {
+  margin-top: 2px;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.confirm-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.confirm-modal-cancel {
+  padding: 9px 16px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.confirm-modal-confirm,
+.confirm-modal-confirm-danger {
+  padding: 9px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.confirm-modal-confirm {
+  background: var(--verdigris);
+}
+
+.confirm-modal-confirm-danger {
+  background: var(--sindoor);
+}
+
+.confirm-modal-confirm:disabled,
+.confirm-modal-confirm-danger:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
