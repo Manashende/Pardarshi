@@ -1,0 +1,66 @@
+.print-stats-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.print-stat {
+  flex: 1;
+  padding: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.print-stat-highlight {
+  border-color: var(--verdigris);
+  background: color-mix(in srgb, var(--verdigris) 10%, var(--bg));
+}
+
+.print-stat-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.print-stat-highlight .print-stat-value {
+  color: var(--verdigris);
+}
+
+.print-stat-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+.print-jobs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.print-job-chip {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+.print-job-chip-id {
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+}
+
+.print-job-chip-copies {
+  font-weight: 600;
+  margin-top: 2px;
+}

@@ -93,6 +93,27 @@ def list_exam_events(
         }
         for e in events
     ]
+    
+@router.get("/{exam_event_id}/variants")
+def list_variants(
+    exam_event_id: UUID,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(require_role([UserRole.ADMIN, UserRole.AUDITOR])),
+):
+    event = db.query(ExamEvent).filter(ExamEvent.id == exam_event_id).first()
+    if event is None:
+        raise HTTPException(404, "exam event not found")
+
+    variants = (
+        db.query(PaperVariant)
+        .filter(PaperVariant.exam_event_id == exam_event_id)
+        .order_by(PaperVariant.variant_index)
+        .all()
+    )
+    return [
+        {"id": str(v.id), "variant_index": v.variant_index}
+        for v in variants
+    ]
 
 @router.post("/{exam_event_id}/compile")
 def compile_exam_event(

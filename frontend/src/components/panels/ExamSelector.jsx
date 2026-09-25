@@ -14,7 +14,7 @@ export default function ExamSelector({ onSelectionChange }) {
     listExamEvents()
       .then((events) => {
         setExamEvents(events);
-        if (events.length > 0) setSelectedExamId(events[0].exam_event_id);
+        if (events.length > 0) setSelectedExamId(events[0].id);
       })
       .catch((e) => setError(e.message));
   }, []);
@@ -27,7 +27,7 @@ export default function ExamSelector({ onSelectionChange }) {
     listVariantsForExamEvent(selectedExamId)
       .then((v) => {
         setVariants(v);
-        setSelectedVariantId(v.length > 0 ? v[0].variant_id : '');
+        setSelectedVariantId(v.length > 0 ? v[0].id : '');
       })
       .catch((e) => setError(e.message));
   }, [selectedExamId]);
@@ -47,7 +47,7 @@ export default function ExamSelector({ onSelectionChange }) {
         <select value={selectedExamId} onChange={(e) => setSelectedExamId(e.target.value)}>
           {examEvents.length === 0 && <option value="">No exam events yet</option>}
           {examEvents.map((ev) => (
-            <option key={ev.exam_event_id} value={ev.exam_event_id}>
+            <option key={ev.id} value={ev.id}>
               {ev.exam_name} — {ev.status} — {formatTimestamp(ev.exam_start_epoch)}
             </option>
           ))}
@@ -59,7 +59,7 @@ export default function ExamSelector({ onSelectionChange }) {
                 disabled={variants.length === 0}>
           {variants.length === 0 && <option value="">No variants compiled yet</option>}
           {variants.map((v) => (
-            <option key={v.variant_id} value={v.variant_id}>Variant {v.variant_index}</option>
+            <option key={v.id} value={v.id}>Variant {v.variant_index}</option>
           ))}
         </select>
       </div>
