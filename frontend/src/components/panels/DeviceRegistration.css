@@ -1,0 +1,32 @@
+.device-registration-panel {
+  margin-bottom: 20px;
+}
+
+.device-fingerprint-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.device-fingerprint-value {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 10px;
+  color: var(--text);
+}
+
+.device-status-approved {
+  color: var(--verdigris);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.device-status-pending {
+  color: var(--sindoor);
+  font-size: 12px;
+  font-weight: 600;
+}

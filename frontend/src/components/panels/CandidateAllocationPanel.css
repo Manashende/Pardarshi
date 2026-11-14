@@ -1,0 +1,14 @@
+.candidate-allocation-panel {
+  margin-top: 20px;
+}
+
+.allocation-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 14px 0;
+}
+
+.allocation-controls select {
+  flex: 1;
+}

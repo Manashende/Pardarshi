@@ -1,0 +1,8 @@
+/* Kept for the .ledger-cell-mono class PendingRevealVotesPanel still
+   uses on Question ID — everything else this file used to style
+   (.auditor-governance-panel) is gone now that both panels are flat
+   fragments living inside the page's own .panel wrapper. */
+.ledger-cell-mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+}

@@ -1,0 +1,18 @@
+.centre-operator-assignment-panel {
+  margin-top: 0;
+}
+
+.centre-assign-form {
+  align-items: flex-end;
+  margin: 14px 0 6px 0;
+}
+
+.centre-assign-submit-field {
+  flex: 0 0 auto;
+}
+
+.centre-assign-submit-field .login-submit {
+  padding: 10px 24px;
+  margin-top: 0;
+  white-space: nowrap;
+}

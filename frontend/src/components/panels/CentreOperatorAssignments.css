@@ -1,0 +1,302 @@
+.centre-operator-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.centre-card {
+  padding: 20px;
+}
+
+.centre-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.countdown-cell {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.unlocked-banner {
+  color: var(--verdigris);
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.print-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.print-job-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.print-job-label {
+  font-size: 12px;
+  color: var(--text);
+  min-width: 140px;
+  flex-shrink: 0;
+}
+
+.print-job-bar-track {
+  flex: 1;
+  height: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.print-job-bar-fill {
+  height: 100%;
+  background: var(--verdigris);
+  transition: width 1s linear;
+}
+
+.print-job-time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  min-width: 60px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.presence-row td {
+  background: var(--bg);
+}
+
+.presence-inline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.centre-operator-summary-bar {
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.centre-operator-summary-bar.summary-ready {
+  background: color-mix(in srgb, var(--verdigris) 12%, transparent);
+  color: var(--verdigris);
+  border: 1px solid color-mix(in srgb, var(--verdigris) 30%, transparent);
+}
+
+.centre-operator-summary-bar.summary-all-waiting {
+  background: color-mix(in srgb, var(--sindoor) 12%, transparent);
+  color: var(--sindoor);
+  border: 1px solid color-mix(in srgb, var(--sindoor) 30%, transparent);
+}
+
+.centre-operator-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.centre-operator-toolbar .tabs-bar {
+  flex: 1;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.centre-operator-search-input {
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 12px;
+  min-width: 220px;
+}
+
+/* A clear top divider before each new exam's row, so consecutive rows for
+   different exams don't blend together. Skipped on rows that belong to
+   the exam above (presence confirmation, errors, unlock result) so those
+   stay visually attached to their parent exam instead of looking separate. */
+.centre-operator-workspace .item-bank-table tbody tr {
+  border-top: 1px solid var(--border);
+}
+
+.centre-operator-workspace .item-bank-table tbody tr:first-child {
+  border-top: none;
+}
+
+.centre-operator-workspace .item-bank-table tbody tr.presence-row,
+.centre-operator-workspace .item-bank-table tbody tr.draft-error-row {
+  border-top: none;
+}
+
+.centre-operator-workspace .item-bank-table tbody td {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+/* Ties the presence-confirmation row visually to the exam row directly
+   above it — a left accent stripe instead of a plain grey band that
+   floats ambiguously between two exams. */
+.presence-row td {
+  background: var(--bg);
+  border-left: 3px solid var(--verdigris);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.assignment-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.assignment-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 18px;
+  background: var(--panel);
+}
+
+.assignment-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.assignment-exam-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 2px 0;
+}
+
+.assignment-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  letter-spacing: 0.03em;
+}
+
+.co-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.co-badge-ready {
+  background: color-mix(in srgb, var(--verdigris) 14%, transparent);
+  color: var(--verdigris);
+}
+
+.co-badge-waiting {
+  background: color-mix(in srgb, var(--text-dim) 14%, transparent);
+  color: var(--text-dim);
+}
+
+.assignment-stats-row {
+  display: flex;
+  gap: 28px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+
+.assignment-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.assignment-stat-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.assignment-stat-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.assignment-stat-time {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 12px;
+}
+
+/* Presence confirmation now lives visually INSIDE the exam card it belongs
+   to — no more ambiguous grey row floating between two unrelated exams. */
+.presence-panel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+}
+
+.assignment-card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.assignment-card-footer .login-submit {
+  width: auto;
+  min-width: 200px;
+  padding: 9px 22px;
+  background: var(--verdigris);
+  border: 1px solid var(--verdigris);
+  color: var(--panel);
+  font-weight: 600;
+}
+
+.assignment-inline-message {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.assignment-card-footer .login-submit:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--verdigris) 88%, black);
+  border-color: color-mix(in srgb, var(--verdigris) 88%, black);
+}
+
+.assignment-card-footer .login-submit:disabled {
+  background: var(--bg);
+  border-color: var(--border);
+  color: var(--text-dim);
+}
+
+.already-unlocked-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--verdigris);
+}

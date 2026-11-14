@@ -1,0 +1,218 @@
+.custodian-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.custodian-event-card {
+  padding: 20px;
+}
+
+.custodian-event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.countdown-cell {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.action-with-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.action-with-badge:last-child {
+  margin-bottom: 0;
+}
+
+.submitted-badge {
+  font-size: 11px;
+  color: var(--verdigris);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Two actions (standard + override) read better stacked than side by side
+   once each has its own submitted-badge next to it. */
+.custodian-event-card .row-actions {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Standard-share is demoted here because bulk select + Submit Selected
+   (below the table) is the primary path for it; per-row still works for
+   a quick one-off, but shouldn't compete visually with bulk or with the
+   override button, which has no bulk equivalent and stays full-weight. */
+.btn-ghost-small {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-ghost-small:hover:not(:disabled) {
+  border-color: var(--verdigris);
+  color: var(--verdigris);
+}
+
+.btn-ghost-small:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.custodian-summary-bar {
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.custodian-summary-bar.summary-pending {
+  background: color-mix(in srgb, var(--sindoor) 12%, transparent);
+  color: var(--sindoor);
+  border: 1px solid color-mix(in srgb, var(--sindoor) 30%, transparent);
+}
+
+.custodian-summary-bar.summary-all-done {
+  background: color-mix(in srgb, var(--verdigris) 12%, transparent);
+  color: var(--verdigris);
+  border: 1px solid color-mix(in srgb, var(--verdigris) 30%, transparent);
+}
+
+.custodian-location-error {
+  margin-bottom: 12px;
+}
+
+.custodian-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.custodian-toolbar .tabs-bar {
+  flex: 1;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.custodian-search-input {
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 12px;
+  min-width: 220px;
+  margin-bottom: 14px;
+}
+
+/* Card header becomes a clickable toggle — reset button defaults and lay
+   it out the same way the old static header looked. */
+.custodian-event-header-clickable {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.custodian-event-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.custodian-chevron {
+  color: var(--text-dim);
+  font-size: 12px;
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+}
+
+.custodian-chevron-open {
+  transform: rotate(90deg);
+}
+
+.event-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.event-badge-done {
+  background: color-mix(in srgb, var(--verdigris) 14%, transparent);
+  color: var(--verdigris);
+}
+
+.event-badge-pending {
+  background: color-mix(in srgb, var(--sindoor) 14%, transparent);
+  color: var(--sindoor);
+}
+
+.custodian-event-card .item-bank-table {
+  margin-top: 14px;
+}
+
+/* Fixed width so "Submit X" vs "Resubmit X" don't push the ✓ Submitted
+   badge to different horizontal positions between rows. */
+.custodian-event-card .action-with-badge button {
+  min-width: 190px;
+  text-align: center;
+}
+
+.custodian-event-card .item-bank-table {
+  table-layout: auto;
+  width: 100%;
+}
+
+.custodian-event-card .item-bank-table th,
+.custodian-event-card .item-bank-table td {
+  padding: 10px 18px;
+}
+
+.custodian-event-card .item-bank-table th:nth-child(3),
+.custodian-event-card .item-bank-table td:nth-child(3),
+.custodian-event-card .item-bank-table th:nth-child(4),
+.custodian-event-card .item-bank-table td:nth-child(4) {
+  text-align: center;
+}
+
+/* Actions column hugs its own buttons instead of claiming a wide fixed
+   share of the row — the space that frees up gets redistributed across
+   the other columns automatically instead of sitting empty on the right. */
+.custodian-event-card .item-bank-table th:last-child,
+.custodian-event-card .item-bank-table td:last-child {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.event-badge-blocked {
+  background: color-mix(in srgb, var(--text-dim) 16%, transparent);
+  color: var(--text-dim);
+}
+
+.window-closed-note {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-style: italic;
+}
