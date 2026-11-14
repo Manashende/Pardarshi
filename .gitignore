@@ -1,11 +1,10 @@
-# ---------- Secrets ----------
+# Secrets
 .env
 .env.*
-!.env.example
 *.pem
 *.key
 
-# ---------- Python ----------
+# Python
 __pycache__/
 *.py[cod]
 venv/
@@ -14,19 +13,7 @@ env/
 .pytest_cache/
 *.egg-info/
 
-# ---------- Excluded on purpose ----------
-backend/alembic/versions/
-backend/scripts/
-
-# ---------- Local dev scratch (backend) ----------
-backend/check_enum.py
-backend/test_auth_manually.py
-backend/test_crypto_manually.py
-backend/test_time_manually.py
-backend/create_admin.py
-backend/seed_test_data.py
-
-# ---------- Node / frontend ----------
+# Node / frontend
 node_modules/
 dist/
 build/
@@ -34,12 +21,11 @@ build/
 *.local
 npm-debug.log*
 
-# ---------- Editor / OS ----------
+# Editor / OS
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 
-# ---------- Logs / misc ----------
+# Logs
 *.log
-*.zip
